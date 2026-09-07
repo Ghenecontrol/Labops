@@ -387,6 +387,8 @@
   .metrics-head{text-align:center;max-width:520px;margin:0 auto 44px;}
   .metrics-head h2{color:var(--white);font-size:clamp(1.6rem,2.8vw,2.1rem);}
   .metrics-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:28px;text-align:center;}
+  .traction-grid{grid-template-columns:repeat(3,1fr);}
+  .traction-grid .metric:nth-child(7){grid-column:2 / span 1;}
   .metric .num{font-family:var(--font-display);font-size:clamp(1.7rem,3vw,2.2rem);color:var(--gold-300);margin-bottom:6px;}
   .metric .lbl{font-size:0.85rem;opacity:0.75;}
   .metrics-note{text-align:center;font-size:0.74rem;opacity:0.5;margin-top:36px;}
@@ -450,6 +452,7 @@
     .stat-row{grid-template-columns:1fr 1fr;}
     .infra-badges{gap:32px;}
     .metrics-grid{grid-template-columns:1fr 1fr;gap:24px;}
+    .traction-grid .metric:nth-child(7){grid-column:auto;}
     .market-grid{grid-template-columns:1fr;}
     .about-grid{grid-template-columns:1fr;}
     .about-grid > div:last-child{order:-1;}
@@ -630,9 +633,9 @@
     <div class="hero-slide">
       <div class="wrap hero-grid">
         <div class="hero-copy">
-          <p class="eyebrow">AI-Powered Laboratory Operations</p>
+          <p class="eyebrow">B2B AI for Laboratory Operations</p>
           <h1>Turn Lab Data Into Operational Intelligence</h1>
-          <p>Predict delays. Reduce turnaround time. Optimize workflows. Deliver results faster.</p>
+          <p>Predict delays. Reduce turnaround time. Optimize workflows. Built for laboratory organizations — hospital labs, diagnostic networks, and multi-site groups, not individual practitioners.</p>
           <a href="platform.html" class="btn btn-white">
             See the Platform
             <span class="btn-arrow"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6h8M6 2l4 4-4 4" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
@@ -656,7 +659,7 @@
     <div class="hero-slide">
       <div class="wrap hero-grid">
         <div class="hero-copy">
-          <p class="eyebrow">Built On AWS + NVIDIA</p>
+          <p class="eyebrow">Built On AWS + Azure + NVIDIA</p>
           <h1>Enterprise-Grade Intelligence, Ready On Day One</h1>
           <p>Secure, scalable infrastructure purpose-built for the demands of intelligent healthcare operations.</p>
           <a href="infrastructure.html" class="btn btn-white">
@@ -1054,19 +1057,17 @@
       <div class="infra-arrow">↓</div>
       <div class="infra-layer">AWS Cloud Infrastructure</div>
       <div class="infra-arrow">↓</div>
-      <div class="infra-layer">AI / ML Layer</div>
-      <div class="infra-arrow">↓</div>
-      <div class="infra-layer">NVIDIA Accelerated Computing</div>
+      <div class="infra-layer">AI / ML Layer — Azure Machine Learning + NVIDIA Accelerated Computing</div>
       <div class="infra-arrow">↓</div>
       <div class="infra-layer">Operations Intelligence</div>
       <div class="infra-arrow">↓</div>
       <div class="infra-layer" style="background:var(--purple-700);color:var(--white);border-color:var(--purple-700);">Laboratory Dashboard</div>
     </div>
     <div class="stat-row" style="max-width:720px;margin:36px auto 44px;">
-      <div class="stat-box"><div class="num">2.4M+</div><div class="lbl">Specimens Processed / Month</div></div>
-      <div class="stat-box"><div class="num">40TB+</div><div class="lbl">Operational Data Under Management</div></div>
-      <div class="stat-box"><div class="num">&lt;200ms</div><div class="lbl">AI Prediction Latency</div></div>
-      <div class="stat-box"><div class="num">99.94%</div><div class="lbl">Platform Uptime</div></div>
+      <div class="stat-box"><div class="num">AES-256</div><div class="lbl">Encryption at Rest &amp; in Transit</div></div>
+      <div class="stat-box"><div class="num">&lt;200ms</div><div class="lbl">AI Prediction Latency (Design Target)</div></div>
+      <div class="stat-box"><div class="num">Per-Tenant</div><div class="lbl">Isolated Storage per Laboratory</div></div>
+      <div class="stat-box"><div class="num">Auto-Scaling</div><div class="lbl">Managed Compute, Not Fixed Capacity</div></div>
     </div>
     <div class="infra-badges">
       <div class="infra-col">
@@ -1097,8 +1098,22 @@
           <span class="infra-tag">Triton Inference Server</span>
         </div>
       </div>
+      <div class="infra-col">
+        <h4><svg class="cloud-logo" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="vertical-align:middle;margin-right:6px;">
+            <path d="M9.5 3h4L19 18.5l-6.2-1.8L9 21H4l7.5-11.2z" fill="#0078D4"/>
+          </svg>Azure</h4>
+        <div class="infra-tags">
+          <span class="infra-tag">Azure Kubernetes Service</span>
+          <span class="infra-tag">Azure Machine Learning</span>
+          <span class="infra-tag">Microsoft Entra ID</span>
+          <span class="infra-tag">Azure Key Vault</span>
+          <span class="infra-tag">Azure Blob Storage</span>
+          <span class="infra-tag">Azure Monitor</span>
+        </div>
+      </div>
     </div>
-    <p style="text-align:center;font-size:0.72rem;opacity:0.45;margin-top:18px;">AWS and NVIDIA are trademarks of their respective owners. LabOps AI is not affiliated with or endorsed by them.</p>
+    <p style="text-align:center;font-size:0.82rem;opacity:0.65;max-width:640px;margin:18px auto 0;">We run core hosting and data storage on AWS, with Azure Machine Learning and Microsoft Entra ID handling model experimentation and enterprise identity for customers who require it &mdash; a deliberate two-cloud setup, not a badge wall.</p>
+    <p style="text-align:center;font-size:0.72rem;opacity:0.45;margin-top:14px;">AWS, Microsoft Azure, and NVIDIA are trademarks of their respective owners. LabOps AI is not affiliated with or endorsed by them.</p>
     <div style="text-align:center;margin-top:36px;">
       <a href="infrastructure.html" class="btn btn-dark">
         Explore Our Infrastructure
@@ -1111,28 +1126,40 @@
 <section class="metrics" id="impact">
   <div class="wrap">
     <div class="metrics-head">
-      <p class="eyebrow" style="opacity:0.55;color:var(--gold-300);">Impact</p>
-      <h2>Running in production, today.</h2>
+      <p class="eyebrow" style="opacity:0.55;color:var(--gold-300);">Traction</p>
+      <h2>Where we actually are, stated plainly.</h2>
     </div>
-    <div class="metrics-grid">
+    <div class="metrics-grid traction-grid">
       <div class="metric">
-        <div class="num">128</div>
-        <div class="lbl">Laboratories — running LabOps AI in production today</div>
+        <div class="num">24</div>
+        <div class="lbl">MVP Users — people actively using LabOps AI today</div>
       </div>
       <div class="metric">
-        <div class="num">2.4M+</div>
-        <div class="lbl">Specimens Tracked — every month, across every connected lab</div>
+        <div class="num">4</div>
+        <div class="lbl">Design Partners — companies actively helping shape the product</div>
       </div>
       <div class="metric">
-        <div class="num">99.94%</div>
-        <div class="lbl">Platform Uptime — over the last 90 days</div>
+        <div class="num">3</div>
+        <div class="lbl">Pilot Commitments — companies who've agreed to test LabOps AI</div>
       </div>
       <div class="metric">
-        <div class="num">18</div>
-        <div class="lbl">LIS Integrations — shipped and running in the field</div>
+        <div class="num">19</div>
+        <div class="lbl">Pilot Conversations — qualified businesses currently discussing a pilot</div>
+      </div>
+      <div class="metric">
+        <div class="num">6</div>
+        <div class="lbl">Letters of Intent — companies who've formally expressed intent to buy</div>
+      </div>
+      <div class="metric">
+        <div class="num">42</div>
+        <div class="lbl">Discovery Interviews — real conversations with target laboratory teams</div>
+      </div>
+      <div class="metric">
+        <div class="num">165</div>
+        <div class="lbl">Waitlist — qualified laboratories and businesses waiting to join</div>
       </div>
     </div>
-    <p class="metrics-note">We're a small team and these numbers reflect that honestly — 128 labs, not 12,000. We'd rather show real, modest traction than an inflated figure, and we'll update this section as it grows.</p>
+    <p class="metrics-note">The MVP is live and in active daily use &mdash; not a beta, not a concept. These are the real, current numbers behind it: small, specific, and unrounded, because we'd rather you trust them than be impressed by them.</p>
   </div>
 </section>
 
@@ -1202,7 +1229,7 @@
         <p class="eyebrow" style="color:var(--purple-500);margin-bottom:10px;">Customer Feedback</p>
         <div class="mark">"</div>
         <p>The predictive alerts and real-time dashboards have helped us reduce turnaround time and significantly improved our workflow efficiency.</p>
-        <div class="attr">— Laboratory Operations Manager<br>One of 128 labs running LabOps AI today</div>
+        <div class="attr">— Laboratory Operations Manager<br>One of our current design partners</div>
       </div>
     </div>
   </div>
